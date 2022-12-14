@@ -1,1 +1,22 @@
-<p>header works..</p>
+<header>
+    <div class="mini-navbar-wrap">
+      <div class="logo-wrap">
+        <p class="logo">
+          <a routerLink="/">Game Store</a>
+        </p>
+      </div>
+      <div class="mini-navbar">
+        <ul *ngIf="!isLoggedIn">
+          <li>
+            <a routerLink="recent/catalog">Our Games</a>
+          </li>
+          <li>
+            <a class="logo-wrap" routerLink="/auth/login">Login</a>
+          </li>
+          <li>
+            <a class="logo-wrap" routerLink="/auth/register">Register</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>

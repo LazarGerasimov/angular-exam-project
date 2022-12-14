@@ -1,0 +1,22 @@
+/* footer  */
+
+footer {
+    background: linear-gradient(0deg, rgba(60, 4, 244, 0.146) 0%, rgb(3, 131, 73) 15%);
+    ;
+    margin-top: 1em;
+    position:absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 1366px;
+}
+
+footer p {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+    text-align: center;
+}
+
+footer span {
+    font-size: 1.5em;
+}
