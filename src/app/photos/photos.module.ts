@@ -15,4 +15,4 @@ import { MainComponent } from './main/main.component';
     MainComponent
   ]
 })
-export class GameModule { }
+export class PhotosModule { }

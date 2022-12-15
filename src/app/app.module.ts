@@ -7,7 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
-import { GameModule } from './game/game.module';
+import { PhotosModule } from './photos/photos.module';
+
+
 
 
 @NgModule({
@@ -20,7 +22,7 @@ import { GameModule } from './game/game.module';
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
-    GameModule
+    PhotosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
