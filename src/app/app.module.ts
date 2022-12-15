@@ -8,21 +8,20 @@ import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
 import { CoreModule } from './core/core.module';
 import { PhotosModule } from './photos/photos.module';
-
-
-
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
     AuthModule,
+    BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     CoreModule,
-    PhotosModule
+    PhotosModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
