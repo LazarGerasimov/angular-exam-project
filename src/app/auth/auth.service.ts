@@ -9,7 +9,7 @@ import { IUser } from '../shared/interfaces';
 })
 export class AuthService {
 
-  constructor(private http: HttpClient, private router: Router) { }
+  // constructor(private http: HttpClient, private router: Router) { }
 
   user!: IUser[] | null;
 
@@ -17,15 +17,15 @@ export class AuthService {
     return this.user !== null;
   }
 
-  register(email: string, password: string) {
-    return this.http.post<IUser>('/auth/register', { email, password });
-  }
+  // register(email: string, password: string) {
+  //   return this.http.post<IUser>('/auth/register', { email, password });
+  // }
 
-  login(email: string, password: string) {
-    return this.http.post<any>('/auth/login', { email, password });
-  }
+  // login(email: string, password: string) {
+  //   return this.http.post<any>('/auth/login', { email, password });
+  // }
 
-  logout() {
-    return this.http.post<void>('/auth/logout', {});
-  }
+  // logout() {
+  //   return this.http.post<void>('/auth/logout', {});
+  // }
 }
