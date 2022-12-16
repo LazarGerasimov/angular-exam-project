@@ -2,13 +2,19 @@
   <div class="mini-navbar-wrap">
     <div class="logo-wrap">
       <p class="logo">
-        <a routerLink="/">Photo Gallery</a>
+        <a routerLink="/">
+          <img src="../../../assets/logo3.png">
+        </a>
       </p>
     </div>
     <div class="mini-navbar">
+      
       <ul *ngIf="!isLoggedIn">
         <li>
           <a routerLink="/">Home</a>
+        </li>
+        <li>
+          <a class="logo-wrap" routerLink="/photos">All Photos</a>
         </li>
         <li>
           <a class="logo-wrap" routerLink="/auth/login">Login</a>

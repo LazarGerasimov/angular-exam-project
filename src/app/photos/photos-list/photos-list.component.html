@@ -1,0 +1,10 @@
+<div class="our_photos" *ngFor="let photo of photosList">
+  <div class="photo_box">
+    <figure>
+      <img src={{photo.img}} width="300" height="200" alt="img" />
+    </figure>
+    <h3><a routerLink="">{{ photo.title }}</a></h3>
+    <h2>£{{ photo.price }}</h2><br>
+      <p>{{photo.description}}</p>
+  </div>
+</div>

@@ -1,6 +1,7 @@
 header {
     // background: rgb(115, 0, 182);
-    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, #a14203 25%);
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, #000000 25%, rgb(0, 0, 0) 0%);
+    // margin: 0 0;
 }
 
 header ul {
@@ -43,18 +44,18 @@ nav {
 
 .logo {
     padding-left: 15%;
-    font-size: 1.7em;
+    font-size: 1em;
     color: white;
     padding-bottom: 0;
 }
 
-.logo a{
-    
+.logo img{
+    size: 60px 60px;
 }
 .logo-wrap {
     font-family: 'Comic-Sans', cursive;
-    letter-spacing: .1em;
-    margin: 0.5em 0;
+    // letter-spacing: .1em;
+    margin: 0 0;
 }
 
 .mini-navbar-wrap {
@@ -64,4 +65,5 @@ nav {
     align-items: center;
     width: 100%;
     margin: auto;
+    // height: 80%;
 }
