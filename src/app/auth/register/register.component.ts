@@ -20,9 +20,11 @@ export class RegisterComponent {
   }
 
   registerHandler(): void {
-   this.authService.register(this.form.value).subscribe({
-    next: () => this.router.navigate(['/']),
-    error: (err) => console.log(err)
+    if (this.form.invalid) {return;}
+    const {email, password} = this.form.value;
+   this.authService.register(email!, password!).subscribe(user => {
+    this.authService.user = user;
+    this.router.navigate(['/']);
    })
   }
 }

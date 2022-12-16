@@ -1,7 +1,6 @@
 header {
     // background: rgb(115, 0, 182);
-    background: linear-gradient(0deg, rgba(60, 4, 244, 0.146) 0%, rgb(162, 87, 2) 15%);
-    margin: 0 0;
+    background: linear-gradient(0deg, rgb(0, 0, 0) 0%, #a14203 25%);
 }
 
 header ul {
@@ -30,7 +29,7 @@ header li {
 }
 
 header a {
-    font-family:'Times New Roman', Times, serif;
+    font-family: 'Times New Roman', Times, serif;
     text-shadow: 1.3px 1.3px #ffffff80;
     text-decoration: none;
     font-size: 25px;
@@ -42,6 +41,16 @@ nav {
     border-top: transparent;
 }
 
+.logo {
+    padding-left: 15%;
+    font-size: 1.7em;
+    color: white;
+    padding-bottom: 0;
+}
+
+.logo a{
+    
+}
 .logo-wrap {
     font-family: 'Comic-Sans', cursive;
     letter-spacing: .1em;

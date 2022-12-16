@@ -14,7 +14,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  user!: IUser | null;
+  user: IUser | null = null;
 
   get isLoggedIn() {
     return this.user !== null;
@@ -24,19 +24,20 @@ export class AuthService {
   //   return this.http.post<IUser>('/auth/register', { email, password });
   // }
 
-  register(data: {}) {
-    return this.http.post<IUser>(`${apiUrl}auth/register`, data).pipe(
-      tap((user) => {
-        this.user = user
-      })
-    )
+  register(email: string, password: string) {
+    return this.http.post<IUser>(`${apiUrl}auth/register`, { email, password })
+    // .pipe(
+    //   tap((user) => {
+    //     this.user = user
+    //   })
+    // )
   }
 
   login(email: string, password: string) {
     return this.http.post<IUser>(`${apiUrl}auth/login`, { email, password });
   }
 
-  // logout() {
-  //   return this.http.post<void>('/auth/logout', {});
-  // }
+  logout() {
+    return this.http.get<void>(`${apiUrl}auth/logout`, {});
+  }
 }
