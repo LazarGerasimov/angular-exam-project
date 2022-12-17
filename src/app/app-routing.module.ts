@@ -49,7 +49,7 @@ const routes: Routes = [
     component: MostRecentComponent,
     canActivate: [AuthGuard],
     data: {
-      'guest': false
+      'guest': true
     }
   },
   {
