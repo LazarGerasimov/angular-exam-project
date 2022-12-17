@@ -4,7 +4,7 @@ Single Page Application created with Angular FE, Node.JS/Express.js for BE and M
 
 ![image](https://user-images.githubusercontent.com/99253584/208249446-bf391562-7841-4453-a63d-355b4ff86de2.png)
 
-The app works as a gallery and support several functionalities: 
+The app works as a gallery and supports several functionalities: 
 
 Registering and logging users.
 
