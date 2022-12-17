@@ -1,9 +1,16 @@
 # Photo-Gallery - Angular Exam Project
 
-Single Page Application created with Angular FE, Node.JS/Express for BE and MongoDB.  
+Single Page Application created with Angular FE, Node.JS/Express.js for BE and MongoDB.  
 
 ![image](https://user-images.githubusercontent.com/99253584/208249446-bf391562-7841-4453-a63d-355b4ff86de2.png)
 
+The app works as a gallery and support several functionalities: 
+
+Registering and logging users. 
+
+Guests have access to the home page and the three latest photos uploaded by the registered users. A quick link is provided for logging in to unlock the full content.
+
+Users can upload their own photos, add title, description, price and attach a link for their photos. They can also see the three most expensive photos. 
 
 ![image](https://user-images.githubusercontent.com/99253584/208249493-c4c8b110-f196-4f12-8cb3-7fa7c0e7f56f.png)
 
