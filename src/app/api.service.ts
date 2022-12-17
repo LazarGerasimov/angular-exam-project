@@ -30,7 +30,7 @@ export class ApiService {
     return this.http.get<IPhoto[]>(`${apiUrl}photos/most-recent`);
   }
 
-  getPhotoById(id: number) {
+  getPhotoById(id: string) {
     return this.http.get<IPhoto>(`${apiUrl}photos/${id}`)
   }
   // TODO add db requests

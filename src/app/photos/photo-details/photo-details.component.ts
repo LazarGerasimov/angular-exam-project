@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { AuthService } from 'src/app/auth/auth.service';
@@ -9,24 +9,25 @@ import { IPhoto } from 'src/app/shared/interfaces';
   templateUrl: './photo-details.component.html',
   styleUrls: ['./photo-details.component.scss']
 })
-export class PhotoDetailsComponent {
+export class PhotoDetailsComponent implements OnInit {
 
-  photo: IPhoto | undefined;
-  isAuthor: boolean = false;
+  photo!: IPhoto | null;
+  isOwner: boolean = false;
   errors: Object | undefined;
+  hasPhoto: boolean = false;
 
   constructor (private apiService: ApiService, private authService: AuthService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
-  getPhotoById(): void {
-    this.photo = undefined;
-    const id = this.activatedRoute.snapshot.params['id'];
+  ngOnInit(): void {
+    let id = this.activatedRoute.snapshot.params['id'];
     this.apiService.getPhotoById(id).subscribe({
       next: (photo) => {
         this.photo = photo
+        this.hasPhoto = true;
         if(this.authService.user?._id == photo._ownerId._id){
-          this.isAuthor = true
+          this.isOwner = true
         }else {
-          this.isAuthor = false;
+          this.isOwner = false;
         }
       },
       error: (err) => {

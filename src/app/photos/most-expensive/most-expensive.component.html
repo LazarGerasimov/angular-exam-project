@@ -3,7 +3,7 @@
         <figure>
             <img src={{photo.img}} width="500" height="400" alt="img" />
         </figure>
-        <h3>{{ photo.title }}</h3>
+        <h3><a [routerLink]="['/photos/', photo._id]">{{ photo.title }}</a></h3>
         <h2>£{{ photo.price }}</h2><br>
         <p>{{photo.description}}</p>
     </div>
