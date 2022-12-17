@@ -13,6 +13,9 @@
 
 
     <h1>Your Photos</h1>
+    <ng-container *ngIf="isEmpty">
+        <p class="no-photos-message">You have not uploaded any photos yet! Try adding one <a routerLink="/photos/create">here</a></p>
+    </ng-container>
     <div class="our_photos" *ngFor="let photo of photosList">
         <div class="photo_box">
             <figure>

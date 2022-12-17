@@ -22,10 +22,13 @@ export class ProfileComponent implements OnInit {
     };
   }
 
+  isEmpty: boolean = false;
+
   ngOnInit(): void {
     this.apiService.getPhotosByOwner().subscribe({
       next: (value) => {
         this.photosList = value
+        if (this.photosList.length == 0) {this.isEmpty = true}
       },
       error: (err) => {
         console.error(err);

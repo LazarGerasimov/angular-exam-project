@@ -17,18 +17,18 @@ export class RegisterComponent {
   })
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {
-    
+
   }
 
   registerHandler(): void {
-    if (this.form.invalid) {return;}
-    const {email, password} = this.form.value;
-   this.authService.register(email!, password!).subscribe({
-    next: (user) => {
-      setSession(user)
-      this.authService.setLoginInfo(user, true);
-      this.router.navigate(['/']);
-    } 
-   })
+    if (this.form.invalid) { return; }
+    const { email, password } = this.form.value;
+    this.authService.register(email!, password!).subscribe({
+      next: (user) => {
+        setSession(user)
+        this.authService.setLoginInfo(user, true);
+        this.router.navigate(['/']);
+      }
+    })
   }
 }

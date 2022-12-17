@@ -11,19 +11,6 @@ import { AuthService } from '../auth.service';
 })
 export class LoginComponent {
 
-  // constructor(private router: Router, private authService: AuthService, private fb: FormBuilder) { }
-
-  // loginHandler(form: NgForm): void {
-  //   if (form.invalid) { return; }
-
-  //  const {email, password} = form.value;
-
-  //   this.authService.login(email!, password!).subscribe((user) => {
-  //     this.authService.user = user;
-  //     this.router.navigate(['/']);
-  //   })
-  // }
-
   form = this.fb.group({
     email: ['', [Validators.required]],
     password: ['', [Validators.required, Validators.minLength(5)]]
