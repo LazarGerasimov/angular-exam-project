@@ -21,5 +21,9 @@ export class ApiService {
   uploadPhoto(data: {}) {
     return this.http.post(`${apiUrl}photos/create`, data);
   }
+
+  getMostExpensive() {
+    return this.http.get<IPhoto[]>(`${apiUrl}photos/most-expensive`);
+  }
   // TODO add db requests
 }
