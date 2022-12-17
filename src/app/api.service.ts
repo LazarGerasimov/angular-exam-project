@@ -29,5 +29,9 @@ export class ApiService {
   getRecent() {
     return this.http.get<IPhoto[]>(`${apiUrl}photos/most-recent`);
   }
+
+  getPhotoById(id: number) {
+    return this.http.get<IPhoto>(`${apiUrl}photos/${id}`)
+  }
   // TODO add db requests
 }

@@ -5,7 +5,9 @@ import { PageNotFoundComponent } from './core/page-not-found/page-not-found.comp
 import { MostExpensiveComponent } from './photos/most-expensive/most-expensive.component';
 import { MostRecentComponent } from './photos/most-recent/most-recent.component';
 import { NewPhotoComponent } from './photos/new-photo/new-photo.component';
+import { PhotoDetailsComponent } from './photos/photo-details/photo-details.component';
 import { PhotosListComponent } from './photos/photos-list/photos-list.component';
+import { AuthGuard } from './shared/guards/guard';
 
 const routes: Routes = [
   {
@@ -16,22 +18,47 @@ const routes: Routes = [
   {
     path: 'photos', 
     pathMatch: 'full',
-    component: PhotosListComponent
+    component: PhotosListComponent,
+    canActivate: [AuthGuard],
+    data: {
+      'guest': false
+    }
   },
   {
     path: 'photos/create', 
     pathMatch: 'full',
-    component: NewPhotoComponent
+    component: NewPhotoComponent,
+    canActivate: [AuthGuard],
+    data: {
+      'guest': false
+    }
   },
   {
     path: 'photos/most-expensive', 
     pathMatch: 'full',
-    component: MostExpensiveComponent
+    component: MostExpensiveComponent,
+    canActivate: [AuthGuard],
+    data: {
+      'guest': false
+    }
   },
   {
     path: 'photos/most-recent', 
     pathMatch: 'full',
-    component: MostRecentComponent
+    component: MostRecentComponent,
+    canActivate: [AuthGuard],
+    data: {
+      'guest': false
+    }
+  },
+  {
+    path: `photos/:id`, 
+    pathMatch: 'full',
+    component: PhotoDetailsComponent,
+    canActivate: [AuthGuard],
+    data: {
+      'guest': false
+    }
   },
   {
     path: '**',

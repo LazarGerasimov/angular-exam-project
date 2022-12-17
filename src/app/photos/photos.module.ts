@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MostExpensiveComponent } from './most-expensive/most-expensive.component';
 import { MostRecentComponent } from './most-recent/most-recent.component';
 import { RouterModule } from '@angular/router';
+import { PhotoDetailsComponent } from './photo-details/photo-details.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { RouterModule } from '@angular/router';
     PhotosListComponent,
     NewPhotoComponent,
     MostExpensiveComponent,
-    MostRecentComponent
+    MostRecentComponent,
+    PhotoDetailsComponent
   ],
   imports: [
     CommonModule,

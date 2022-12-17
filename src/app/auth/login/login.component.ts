@@ -44,7 +44,7 @@ export class LoginComponent {
       next: (user) => {
         setSession(user)
         this.authService.setLoginInfo(user, true)
-        this.router.navigate(['/'])
+        this.router.navigate(['/photos']);
       },
       error: (err) => {
         console.log(err);
