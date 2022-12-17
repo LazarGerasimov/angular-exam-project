@@ -25,5 +25,9 @@ export class ApiService {
   getMostExpensive() {
     return this.http.get<IPhoto[]>(`${apiUrl}photos/most-expensive`);
   }
+
+  getRecent() {
+    return this.http.get<IPhoto[]>(`${apiUrl}photos/most-recent`);
+  }
   // TODO add db requests
 }
