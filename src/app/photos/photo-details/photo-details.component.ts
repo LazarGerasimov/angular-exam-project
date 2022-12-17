@@ -44,7 +44,7 @@ export class PhotoDetailsComponent implements OnInit {
     }
     const id = this.photo?._id;
     this.apiService.deletePhoto(id).subscribe({
-      next: () => this.router.navigate(['/photos']),
+      next: () => this.router.navigate(['/auth/profile']),
       error: (err) => {
         console.log(err);
       }
