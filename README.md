@@ -1,5 +1,11 @@
 # AngularExamProject
 
+
+![image](https://user-images.githubusercontent.com/99253584/208249446-bf391562-7841-4453-a63d-355b4ff86de2.png)
+
+
+![image](https://user-images.githubusercontent.com/99253584/208249493-c4c8b110-f196-4f12-8cb3-7fa7c0e7f56f.png)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
 
 ## Development server
