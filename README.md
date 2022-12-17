@@ -10,7 +10,7 @@ Registering and logging users.
 
 Guests have access to the home page and the three latest photos uploaded by the registered users. A quick link is provided for logging in to unlock the full content.
 
-Registered users have access to the full content of the website. Their personal uploads, content and profile information is stored in the profile tab. Clicking on the title of the photo redirects logged in users to a photo-details page from where they can edit/delete the photo if they are the owners. 
+Registered users have access to the full content of the website. Their personal uploads, content and profile information is stored in the profile tab. Clicking on the title of the photo redirects logged in users to a photo-details page from where they can edit/delete the photo if they are the owners. If they are not, only the like button will be availabe. Respectively, photo owners cannot like the photo themselves.
 
 Users can upload their own photos, add title, description, price and attach a link for their photos. Upon creation/deletion of a personal photo, user is redirected back to their profile tab. In case the user has not added any photos yet or deleted them all, there is a quick link provided in the profile tab that redirects them straight back to the upload option.
 
