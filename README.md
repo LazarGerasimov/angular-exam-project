@@ -16,6 +16,8 @@ Users can upload their own photos, add title, description, price and attach a li
 
 The database models provide links between themselves - created items have ownerId which links them to their creators. The user model contains an array of uploaded photos so they can be extracted by userId. All photos uploaded by users are created with timestamps so the content can be sorted from the most recent onwards. 
 
+Like-functionality to be implemented on a later stage. 
+
 ![image](https://user-images.githubusercontent.com/99253584/208249493-c4c8b110-f196-4f12-8cb3-7fa7c0e7f56f.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
