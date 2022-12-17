@@ -7,7 +7,6 @@
     display: inline-block;
     justify-content: center;
     // grid-template-columns:  300px 300px 300px; /*Make the grid smaller than the container*/
-
 }
 
 .our_photos .photo_box {
@@ -26,7 +25,7 @@
 
 .our_photos .photo_box h3 {
     width: 500px;
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-size: 20px;
     line-height: 20px;
     background-color: #252525;
@@ -35,9 +34,10 @@
     padding: 10px 0;
     transition: ease-in all 0.5s;
 }
+
 .our_photos .photo_box a{
     text-decoration: none;
-    
+    color: white;    
 }
 
 .our_photos .photo_box p {
@@ -62,3 +62,9 @@
 // col-md-4 .margin_bottom1 {
 //     margin-bottom: 10px;
 // }
+
+
+.login-message p {
+    text-align: center;
+    padding-top: 10%;
+}
