@@ -6,11 +6,13 @@ Single Page Application created with Angular FE, Node.JS/Express.js for BE and M
 
 The app works as a gallery and support several functionalities: 
 
-Registering and logging users. 
+Registering and logging users.
 
 Guests have access to the home page and the three latest photos uploaded by the registered users. A quick link is provided for logging in to unlock the full content.
 
-Users can upload their own photos, add title, description, price and attach a link for their photos. They can also see the three most expensive photos. 
+Registered users have access to the full content of the website. Their personal uploads, content and profile information is stored in the profile tab.
+
+Users can upload their own photos, add title, description, price and attach a link for their photos. The app supports editing/deleting functionality. Upon creation/destruction of a personal photo, user is redirected back to their profile tab. In case the user has not added any photos yet, there is a quick link provided in the profile tab.  
 
 ![image](https://user-images.githubusercontent.com/99253584/208249493-c4c8b110-f196-4f12-8cb3-7fa7c0e7f56f.png)
 
