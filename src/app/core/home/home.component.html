@@ -1,6 +1,15 @@
+<ng-container *ngIf="!user">
+    <div class="home-container">
+        <h2>Check our latest photos <a routerLink="/photos/most-recent">here</a> </h2>
+        <h1>Welcome to our gallery</h1>
+    </div>
+</ng-container>
 
-<div class="home-container">
-    <h2>Check our latest photos <a routerLink="/photos/most-recent">here</a> </h2>
-    <h1>Welcome to our gallery</h1>
-</div>
+<ng-container *ngIf="user">
+    <div class="home-container">
+        <h2>Check our latest photos <a routerLink="/photos">here</a> </h2>
+        <h1>Welcome to our gallery</h1>
+    </div>
+</ng-container>
+
 
