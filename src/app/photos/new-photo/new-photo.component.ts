@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-new-photo',
@@ -10,7 +11,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class NewPhotoComponent {
 
-  constructor(private fb: FormBuilder, private apiService: ApiService, private router: Router) {
+  constructor(private fb: FormBuilder, private apiService: ApiService, private router: Router, private authService: AuthService) {
     
   }
 
@@ -24,7 +25,8 @@ export class NewPhotoComponent {
   newPhotoHandler(): void {
     if (this.form.invalid) {return;}
     const {title, description, price, img} = this.form.value;
-    const photo = {title, description, price, img};
+    const _ownerId = this.authService.user?._id;
+    const photo = {title, description, price, img, _ownerId};
    this.apiService.uploadPhoto(photo).subscribe({
     next: () => this.router.navigate(['/']),
     error: (err) => console.log(err)

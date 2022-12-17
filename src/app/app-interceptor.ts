@@ -7,7 +7,8 @@ import { Token } from "@angular/compiler";
 export class AppInterceptor implements HttpInterceptor {
     token: string | null = null
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-        this.token = localStorage.getItem('token')
+        // this.token = localStorage.getItem('token')
+        this.token = localStorage.getItem('token');
         if(this.token){
             return next.handle(req.clone({ setHeaders: { 'X-Authorization': this.token}}));
         }else{

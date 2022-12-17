@@ -19,4 +19,5 @@ export const getSession = () => {
 export const logoutSession = () => {
   sessionStorage.removeItem('User');
   localStorage.removeItem('User');
+  localStorage.removeItem('token');
 }

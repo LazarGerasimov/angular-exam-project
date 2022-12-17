@@ -29,15 +29,22 @@ export class AuthService {
 
   register(email: string, password: string) {
     return this.http.post<IUser>(`${apiUrl}auth/register`, { email, password })
-    // .pipe(
-    //   tap((user) => {
-    //     this.user = user
-    //   })
-    // )
+    .pipe(
+      tap((user) => {
+        this.user = user
+        localStorage.setItem('token', this.user.accessToken);  // TODO
+      })
+    )
   }
 
   login(email: string, password: string) {
-    return this.http.post<IUser>(`${apiUrl}auth/login`, {email, password});
+    return this.http.post<IUser>(`${apiUrl}auth/login`, {email, password})
+    .pipe(
+      tap((user) => {
+        this.user = user
+        localStorage.setItem('token', this.user.accessToken);
+      })
+    )
   }
 
   logout() {
