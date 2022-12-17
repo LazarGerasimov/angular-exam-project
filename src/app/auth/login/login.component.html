@@ -1,7 +1,9 @@
+<!-- #form="ngForm" -->
 
-<div class="log-form">
+
+<!-- <div class="log-form">
   <h2>Login to your account</h2>
-  <form class="login" #form="ngForm" (ngSubmit)="loginHandler(form)">
+  <form  [formGroup]="form" class="login" (ngSubmit)="loginHandler()">
     <input #emailInput="ngModel" ngModel required type="email" name="email" placeholder="email"/>
 
     <ng-container *ngIf="emailInput.touched">
@@ -18,6 +20,26 @@
       <p class="error" *ngIf="passwordInput.errors?.['required']">Password is required!</p>
       <p class="error" *ngIf="passwordInput.errors?.['minlength']">Password must be at least 5 symbols!</p>
     </ng-container>
+    <button type="submit" class="btn">Login</button>
+    <a class="existing" routerLink="/auth/register">Not a member? Register Here!</a>
+  </form>
+</div> -->
+
+
+<div class="log-form">
+  <h2>Login to your account</h2>
+  <form  [formGroup]="form" class="login" (ngSubmit)="loginHandler()">
+    <input type="text" title="email" placeholder="email"  required formControlName="email" />
+    <p class="error" *ngIf="form.get('email')?.touched && form.get('email')?.errors?.['required']">
+      Email is required!
+    </p>
+    <input type="password" placeholder="password" formControlName="password" required minlength="5"/>
+    <p class="error" *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['required']">
+      Password is required!
+    </p>
+    <p class="error" *ngIf="form.get('password')?.touched && form.get('password')?.errors?.['minlength']">
+      Password must be at least 5 symbols!
+    </p>
     <button type="submit" class="btn">Login</button>
     <a class="existing" routerLink="/auth/register">Not a member? Register Here!</a>
   </form>

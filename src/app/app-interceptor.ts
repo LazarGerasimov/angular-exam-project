@@ -1,25 +1,23 @@
-// import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HTTP_INTERCEPTORS } from "@angular/common/http";
-// import { Injectable, Provider } from "@angular/core";
-// import { Observable } from "rxjs";
-// import { environment } from '../environments/environment'
+import { Injectable, Provider } from "@angular/core";
+import { HttpInterceptor, HttpEvent, HttpResponse, HttpRequest, HttpHandler, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { Observable } from "rxjs";
+import { Token } from "@angular/compiler";
 
-// const apiUrl = environment.apiUrl;
+@Injectable()
+export class AppInterceptor implements HttpInterceptor {
+    token: string | null = null
+    intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+        this.token = localStorage.getItem('token')
+        if(this.token){
+            return next.handle(req.clone({ setHeaders: { 'X-Authorization': this.token}}));
+        }else{
+            return next.handle(req.clone())
+        }
+    }
 
-
-// @Injectable()
-// export class AppInterceptor implements HttpInterceptor {
-//     constructor() { }
-
-//     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-//         if (req.url.startsWith('/auth')) {
-//             req = req.clone({url: req.url.replace('/auth', apiUrl + '/auth'), withCredentials: true});
-//         }
-//         return next.handle(req);
-//     }
-
-// }
-// export const appInterceptorProvider: Provider = {
-//     provide: HTTP_INTERCEPTORS,
-//     useClass: AppInterceptor,
-//     multi: true
-// }
+}
+export const appInterceptorProvider: Provider = {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AppInterceptor,
+    multi: true
+  };

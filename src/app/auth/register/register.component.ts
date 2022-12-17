@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { setSession } from 'src/app/shared/session/session';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -22,9 +23,12 @@ export class RegisterComponent {
   registerHandler(): void {
     if (this.form.invalid) {return;}
     const {email, password} = this.form.value;
-   this.authService.register(email!, password!).subscribe(user => {
-    this.authService.user = user;
-    this.router.navigate(['/']);
+   this.authService.register(email!, password!).subscribe({
+    next: (user) => {
+      setSession(user)
+      this.authService.setLoginInfo(user, true);
+      this.router.navigate(['/']);
+    } 
    })
   }
 }
