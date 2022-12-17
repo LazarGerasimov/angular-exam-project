@@ -41,5 +41,9 @@ export class ApiService {
   deletePhoto(id: string | undefined) {
     return this.http.delete(`${apiUrl}photos/${id}`);
   }
+
+  getPhotosByOwner() {
+    return this.http.get<IPhoto[]>(`${apiUrl}auth/profile`);
+  }
   // TODO add db requests
 }

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProfileComponent } from './auth/profile/profile.component';
 import { HomeComponent } from './core/home/home.component';
 import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
 import { EditPhotoComponent } from './photos/edit-photo/edit-photo.component';
@@ -65,6 +66,15 @@ const routes: Routes = [
     path: `photos/edit/:id`, 
     pathMatch: 'full',
     component: EditPhotoComponent,
+    canActivate: [AuthGuard],
+    data: {
+      'guest': false
+    }
+  },
+  {
+    path: 'auth/profile', 
+    pathMatch: 'full',
+    component: ProfileComponent,
     canActivate: [AuthGuard],
     data: {
       'guest': false
