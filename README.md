@@ -1,5 +1,6 @@
-# AngularExamProject
+# Photo-Gallery - Angular Exam Project
 
+Single Page Application created with Angular FE, Node.JS/Express for BE and MongoDB.  
 
 ![image](https://user-images.githubusercontent.com/99253584/208249446-bf391562-7841-4453-a63d-355b4ff86de2.png)
 
