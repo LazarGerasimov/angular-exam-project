@@ -24,7 +24,7 @@ export class PhotoDetailsComponent implements OnInit {
       next: (photo) => {
         this.photo = photo
         this.hasPhoto = true;
-        if(this.authService.user?._id == photo._ownerId._id){
+        if(this.authService.user?._id == photo._ownerId){
           this.isOwner = true
         }else {
           this.isOwner = false;

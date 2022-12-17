@@ -33,5 +33,9 @@ export class ApiService {
   getPhotoById(id: string) {
     return this.http.get<IPhoto>(`${apiUrl}photos/${id}`)
   }
+
+  editPhoto(photo: {}, id: string) {
+    return this.http.put<IPhoto>(`${apiUrl}/photos/${id}`, photo);
+  }
   // TODO add db requests
 }

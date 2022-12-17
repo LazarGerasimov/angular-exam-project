@@ -8,5 +8,13 @@
         <h2>£{{ photo?.price }}</h2><br>
         <p>{{photo?.description}}</p>
     </div>
+    <ng-container *ngIf="!isOwner">
+        <button type="submit" class="btn">Like</button>
+    </ng-container>
+    <ng-container *ngIf="isOwner">
+        <button [routerLink]="['/photos/edit/', photo?._id]" type="submit" class="btn">Edit</button>
+        <button type="submit" class="btn">Delete</button>
+    </ng-container>
+    
 </div>
 </ng-container>

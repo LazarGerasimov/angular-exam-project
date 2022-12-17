@@ -8,6 +8,7 @@ import { MostExpensiveComponent } from './most-expensive/most-expensive.componen
 import { MostRecentComponent } from './most-recent/most-recent.component';
 import { RouterModule } from '@angular/router';
 import { PhotoDetailsComponent } from './photo-details/photo-details.component';
+import { EditPhotoComponent } from './edit-photo/edit-photo.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PhotoDetailsComponent } from './photo-details/photo-details.component';
     NewPhotoComponent,
     MostExpensiveComponent,
     MostRecentComponent,
-    PhotoDetailsComponent
+    PhotoDetailsComponent,
+    EditPhotoComponent
   ],
   imports: [
     CommonModule,
