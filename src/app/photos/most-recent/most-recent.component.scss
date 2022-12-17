@@ -66,5 +66,14 @@
 
 .login-message p {
     text-align: center;
-    padding-top: 10%;
+    padding-top: 4%;
+    padding-right: 8%;
+    font-size: 40px;
+    font-style: oblique;
+    
+}
+
+.login-message p a {
+    text-decoration: none;
+    color: rgba($color: #ce5408, $alpha: 0.8)
 }
