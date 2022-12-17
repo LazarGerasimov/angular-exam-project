@@ -13,7 +13,7 @@
     </ng-container>
     <ng-container *ngIf="isOwner">
         <button [routerLink]="['/photos/edit/', photo?._id]" type="submit" class="btn">Edit</button>
-        <button type="submit" class="btn">Delete</button>
+        <button (click)="deletePhotoHandler()" type="submit" class="btn">Delete</button>
     </ng-container>
     
 </div>

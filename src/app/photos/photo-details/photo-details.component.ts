@@ -15,6 +15,7 @@ export class PhotoDetailsComponent implements OnInit {
   isOwner: boolean = false;
   errors: Object | undefined;
   hasPhoto: boolean = false;
+  token: string | null = localStorage.getItem('token')
 
   constructor (private apiService: ApiService, private authService: AuthService, private router: Router, private activatedRoute: ActivatedRoute) {}
 
@@ -33,6 +34,19 @@ export class PhotoDetailsComponent implements OnInit {
       error: (err) => {
         this.errors = err.error?.error
         console.log(err)
+      }
+    })
+  }
+
+  deletePhotoHandler(): void {
+    if(this.authService.user?._id != this.photo?._ownerId || !this.token){
+      this.router.navigate(['**'])
+    }
+    const id = this.photo?._id;
+    this.apiService.deletePhoto(id).subscribe({
+      next: () => this.router.navigate(['/photos']),
+      error: (err) => {
+        console.log(err);
       }
     })
   }

@@ -28,7 +28,7 @@ export class NewPhotoComponent {
     const _ownerId = this.authService.user?._id;
     const photo = {title, description, price, img, _ownerId};
    this.apiService.uploadPhoto(photo).subscribe({
-    next: () => this.router.navigate(['/']),
+    next: () => this.router.navigate(['/photos']),
     error: (err) => console.log(err)
    })
   }

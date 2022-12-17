@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { AuthService } from 'src/app/auth/auth.service';
+import { IPhoto } from 'src/app/shared/interfaces';
 
 @Component({
   selector: 'app-edit-photo',
@@ -12,13 +13,23 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class EditPhotoComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private apiService: ApiService, private router: Router, private authService: AuthService, private acivatedRoute: ActivatedRoute) {
-    
+
   }
 
-  id = '';
+  id: string = '';
+  photo: IPhoto | null = null;
+  token: string | null = localStorage.getItem('token')
 
   ngOnInit(): void {
     this.id = this.acivatedRoute.snapshot.params['id'];
+    this.apiService.getPhotoById(this.id).subscribe({
+      next: (photo) => {
+        this.photo = photo;
+      },
+      error: (error) => {
+        console.log(error);
+      }
+    })
   }
 
   form = this.fb.group({
@@ -28,13 +39,16 @@ export class EditPhotoComponent implements OnInit {
   });
 
   updatePhotoHandler(): void {
-    if (this.form.invalid) {return;}
-    const {title, description, price} = this.form.value;
-    const _ownerId = this.authService.user?._id;
-    const photo = {title, description, price, _ownerId};
-   this.apiService.editPhoto(photo, this.id).subscribe({
-    next: () => this.router.navigate([`/photos/${this.id}`]),
-    error: (err) => console.log(err)
-   })
+    if (this.form.invalid) { return; }
+    const { title, description, price } = this.form.value;
+    // const _ownerId = this.authService.user?._id;
+    // this.id = this.acivatedRoute.snapshot.params['id'];
+    const photo = { title, description, price};
+    this.apiService.updatePhoto(this.id, photo).subscribe({
+      next: () => this.router.navigate([`/photos/${this.id}`]),
+      error: (err) => console.log(err)
+    })
   }
+
+  
 }
