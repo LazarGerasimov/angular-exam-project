@@ -4,13 +4,19 @@ Single Page Application created with Angular FE, Node.JS/Express.js for BE and M
 
 ![image](https://user-images.githubusercontent.com/99253584/208249446-bf391562-7841-4453-a63d-355b4ff86de2.png)
 
-The app works as a gallery and support several functionalities: 
+The app works as a gallery and supports several functionalities: 
 
-Registering and logging users. 
+Registering and logging users. Register and Login components both have quick links for each other. 
 
 Guests have access to the home page and the three latest photos uploaded by the registered users. A quick link is provided for logging in to unlock the full content.
 
-Users can upload their own photos, add title, description, price and attach a link for their photos. They can also see the three most expensive photos. 
+Registered users have access to the full content of the website. Their personal uploads, content and profile information is stored in the profile tab. Clicking on the title of the photo redirects logged in users to a photo-details page from where they can edit/delete the photo if they are the owners. If they are not, only the like button will be availabe. Respectively, photo owners cannot like the photo themselves.
+
+Users can upload their own photos, add title, description, price and attach a link for their photos. Upon creation/deletion of a personal photo, user is redirected back to their profile tab. In case the user has not added any photos yet or deleted them all, there is a quick link provided in the profile tab that redirects them straight back to the upload option.
+
+The database models provide links between themselves - created items have ownerId which links them to their creators. The user model contains an array of uploaded photos so they can be extracted by userId. All photos uploaded by users are created with timestamps so the content can be sorted from the most recent onwards. 
+
+Like-functionality to be implemented on a later stage. 
 
 ![image](https://user-images.githubusercontent.com/99253584/208249493-c4c8b110-f196-4f12-8cb3-7fa7c0e7f56f.png)
 
