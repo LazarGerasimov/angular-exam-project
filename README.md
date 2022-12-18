@@ -6,7 +6,7 @@ Single Page Application created with Angular FE, Node.JS/Express.js for BE and M
 
 The app works as a gallery and supports several functionalities: 
 
-Registering and logging users.
+Registering and logging users. Register and Login components both have quick links for each other. 
 
 Guests have access to the home page and the three latest photos uploaded by the registered users. A quick link is provided for logging in to unlock the full content.
 
