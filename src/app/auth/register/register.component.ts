@@ -27,7 +27,7 @@ export class RegisterComponent {
       next: (user) => {
         setSession(user)
         this.authService.setLoginInfo(user, true);
-        this.router.navigate(['/']);
+        this.router.navigate(['/auth/profile']);
       }
     })
   }
