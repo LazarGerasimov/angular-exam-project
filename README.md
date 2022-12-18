@@ -6,11 +6,11 @@ Single Page Application created with Angular FE, Node.JS/Express.js for BE and M
 
 The app works as a gallery and supports several functionalities: 
 
-Registering and logging users. Register and Login components both have quick links for each other. 
+Registering and logging users. Register and Login components both have quick links for each other.
 
-Guests have access to the home page and the three latest photos uploaded by the registered users. A quick link is provided for logging in to unlock the full content.
+Both registered and not registered users have access to the Home Page. Both parties see the same message but link redirects to two different pages if there is a logged in user or not. Guests are redirected to a Recent Page where they can see the three latest photos uploaded by the registered users. A quick link is provided for logging in to unlock the full content. Logged in/registered users are redirected to All Photos.
 
-Registered users have access to the full content of the website. Their personal uploads, content and profile information is stored in the profile tab. Clicking on the title of the photo redirects logged in users to a photo-details page from where they can edit/delete the photo if they are the owners. If they are not, only the like button will be availabe. Respectively, photo owners cannot like the photo themselves. Like-functionality to be implemented on a later stage. 
+Registered users have access to the full content of the website. Upon successful registration, users are redirected to their profile page where quick links are provided for photo upload and browse all. Their personal uploads, content and profile information is stored in the profile tab. Clicking on the title of the photo redirects logged in users to a photo-details page from where they can edit/delete the photo if they are the owners. If they are not, only the like button will be availabe. Respectively, photo owners cannot like the photo themselves. Like-functionality to be implemented on a later stage. 
 
 Users can upload their own photos, add title, description, price and attach a link for their photos. Upon creation/deletion of a personal photo, user is redirected back to their profile tab. In case the user has not added any photos yet or deleted them all, there is a quick link provided in the profile tab that redirects them straight back to the upload option. In case they are not sure what to upload, a quick link is provided to other users' photos so they can browse in search of inspiration.
 
