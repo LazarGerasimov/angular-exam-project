@@ -8,7 +8,7 @@ The app works as a gallery and supports several functionalities:
 
 Registering and logging users. Register and Login components both have quick links for each other.
 
-Guests have access to the home page and the three latest photos uploaded by the registered users. A quick link is provided for logging in to unlock the full content.
+Both registered and not registered users have access to the Home Page. Both parties see the same message but link redirects to two different pages if there is a logged in user or not. Guests are redirected to a Recent Page where they can see the three latest photos uploaded by the registered users. A quick link is provided for logging in to unlock the full content. Logged in/registered users are redirected to All Photos.
 
 Registered users have access to the full content of the website. Upon successful registration, users are redirected to their profile page where quick links are provided for photo upload and browse all. Their personal uploads, content and profile information is stored in the profile tab. Clicking on the title of the photo redirects logged in users to a photo-details page from where they can edit/delete the photo if they are the owners. If they are not, only the like button will be availabe. Respectively, photo owners cannot like the photo themselves. Like-functionality to be implemented on a later stage. 
 
